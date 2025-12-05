@@ -3,95 +3,24 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Heroes Quest Therapy Pricing</title>
-    <style>
-      :root {
-        color-scheme: light dark;
-      }
-
-      body {
-        margin: 0;
-        font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont,
-          sans-serif;
-        background: #0f172a;
-        color: #f8fafc;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem 1rem;
-      }
-
-      main {
-        width: min(960px, 100%);
-        background: rgba(15, 23, 42, 0.85);
-        border-radius: 24px;
-        padding: 2.5rem 2rem;
-        box-shadow: 0 25px 75px rgba(15, 23, 42, 0.8);
-      }
-
-      h1 {
-        margin-top: 0;
-        font-size: clamp(2rem, 3vw, 2.75rem);
-      }
-
-      p {
-        margin-bottom: 1.5rem;
-        font-size: 1rem;
-        color: #cbd5f5;
-      }
-
-      #chargebee-pricing-table {
-        width: 100%;
-        min-height: 1054px;
-      }
-
-      .loading {
-        text-align: center;
-        font-size: 1.125rem;
-        padding: 2rem;
-        border: 1px dashed rgba(248, 250, 252, 0.4);
-        border-radius: 16px;
-      }
-    </style>
+    <title>Pricing</title>
   </head>
   <body>
-    <main>
-      <h1>Heroes Quest Therapy Plans</h1>
-      <p>
-        Embed this page anywhere&mdash;including Notion&mdash;to display the
-        live Chargebee pricing table for Heroes Quest Therapy.
-      </p>
-
-      <div class="loading" id="pricing-loader">Loading pricing table…</div>
-
-      <div
-        id="chargebee-pricing-table"
-        data-pricing-table-site="01KBNMM4VYC3H9GBKFHETFFFFW"
-        data-pricing-table-id="01KBNMM5S24ZRP0HKXDDF9ZT8Z"
-        data-pricing-table-viewport-default-height="1054px"
-      ></div>
-    </main>
-
     <script>
       async function onLoad() {
         const chargebee = Chargebee.init({
           site: "heroesquesttherapy",
         });
-
         const pricingTable = await chargebee.pricingTable();
         pricingTable.init();
-        document.getElementById("pricing-loader").style.display = "none";
       }
     </script>
-    <script
-      src="https://js.chargebee.com/v2/chargebee.js"
-      onload="onLoad()"
-      defer
-    ></script>
-    <noscript>
-      Please enable JavaScript to load the Heroes Quest Therapy pricing table.
-    </noscript>
+    <script src="https://js.chargebee.com/v2/chargebee.js" onload="onLoad()"></script>
+    <div
+      id="chargebee-pricing-table"
+      data-pricing-table-site="01KBNMM4VYC3H9GBKFHETFFFFW"
+      data-pricing-table-id="01KBNMM5S24ZRP0HKXDDF9ZT8Z"
+      data-pricing-table-viewport-default-height="1054px"
+    ></div>
   </body>
 </html>
-
